@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artelier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        #title{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.212)), url("/Images/bg.png");
+            color: #ffffff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .art-grid {
+            transition: all 0.5s ease;
+        }
+        .art-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+
+         /* Styling for the popup */
+    #popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      display: none;
+      z-index: 1000;
+    }
+
+
+    #style-1::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+
+#Loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.377)
+  url("/Images/200.webp") 
+   no-repeat center center;
+  z-index: 99999;
+}
+
+    </style>
+</head>
+<body class="bg-gray-50" id="style-1" onload="myfung()">
+    <div id="Loading"></div>
+     <!-- Popup element -->
+  <div id="popup"> Designed & Developed by <a style="text-decoration: none; color: darkslategray;" href="https://github.com/atanu16">Atanu Bera</a></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/40 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-['Cormorant_Garamond'] font-bold">Artelier</h1>
+            <div class="space-x-8 hidden md:block">
+                <a href="#work" class="hover:text-indigo-600 transition-colors">Gallery</a>
+                <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl"><i class="bi bi-list"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="title">
+    <header class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center reveal">
+            <h1 class="text-5xl md:text-7xl font-['Playfair_Display'] font-bold mb-6">Timeless Japanese Art</h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto"> A Journey Through History and Craftsmanship</p>
+            <a href="#work" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">View Gallery</a>
+        </div>
+    </header>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-['Playfair_Display'] font-bold mb-12 text-center reveal">Featured Works</h2>
+            <div class="art-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Art Items -->
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/1.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/2.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/3.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/4.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/5.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/6.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/7.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/8.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/9.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/10.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/11.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/12.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/13.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/14.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/15.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/16.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/17.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/18.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/19.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/20.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+                <div class="art-item reveal rounded-lg overflow-hidden">
+                    <img src="/Images/21.jpg" alt="Artwork" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 reveal">
+                <img src="/Images/5623.jpg" alt="Artist Studio" class="rounded-lg shadow-lg">
+            </div>
+            <div class="md:w-1/2 reveal">
+                <h2 class="text-3xl font-['Playfair_Display'] font-bold mb-6">Timeless Japanese Art: A Journey Through Tradition</h2>
+                <p class="text-gray-600 mb-6">Explore the captivating world of traditional Japanese art through a curated collection of masterpieces that showcase the rich heritage, techniques, and cultural significance of ancient craftsmanship. Discover the beauty and stories behind each piece, as we preserve and honor the timeless artistry of Japan's past.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/_rozzer_" class="text-2xl hover:text-blue-600 transition"><i class="bi bi-instagram"></i></a>
+                    <a href="https://github.com/atanu16" class="text-2xl hover:text-blue-600 transition"><i class="bi bi-github"></i></a>
+                    <a href="https://www.atanubera.xyz/" class="text-2xl hover:text-blue-600 transition"><i class="bi bi-box"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-3xl font-['Playfair_Display'] font-bold mb-12 text-center reveal">Get in Touch</h2>
+            <form class="space-y-6 reveal" action="mailto:atanumax2@gmail.com" method="post" enctype="text/plain">
+                <div>
+                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                </div>
+                <div>
+                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                </div>
+                <div>
+                    <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2024 ArtFolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+                // Mobile menu toggle
+                const menuButton = document.querySelector('button');
+        const nav = document.querySelector('nav div div');
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('block');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-full');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('w-full');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('shadow-lg');
+        });
+        
+        // Reveal animations on scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); 
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        // Reveal animations on scroll with bounce
+function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add('active', 'bounce');
+        } else {
+            element.classList.remove('active', 'bounce'); 
+        }
+    });
+}
+
+window.addEventListener('scroll', reveal);
+reveal(); // Initial check on load
+
+
+
+// Function to show the popup
+function showPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block'; 
+      setTimeout(() => {
+        popup.style.display = 'none'; 
+      }, 4000);
+    }
+
+    showPopup();
+
+
+
+    // Loader
+    var preloader = document.getElementById("Loading");
+    function myfung() {
+      preloader.style.display = "none";
+    }
+
+    </script>
+</body>
+</html>
