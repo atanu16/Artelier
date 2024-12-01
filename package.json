@@ -23,6 +23,7 @@
   "homepage": "https://github.com/atanu16/Artelier#readme",
   "dependencies": {
     "express": "^4.21.1",
+    "new-folder": "file:",
     "nodemon": "^3.1.7",
     "path": "^0.12.7"
   }
